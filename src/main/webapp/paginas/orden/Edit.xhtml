@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="OrdenEditDlg" widgetVar="OrdenEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditOrdenTitle}">
+            <h:form id="OrdenEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{ordenController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_idOrden}" for="idOrden" />
+                        <p:inputText id="idOrden" value="#{ordenController.selected.idOrden}" title="#{bundle.EditOrdenTitle_idOrden}" required="true" requiredMessage="#{bundle.EditOrdenRequiredMessage_idOrden}"/>
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_descripcion}" for="descripcion" />
+                        <p:inputTextarea rows="4" cols="30" id="descripcion" value="#{ordenController.selected.descripcion}" title="#{bundle.EditOrdenTitle_descripcion}" required="true" requiredMessage="#{bundle.EditOrdenRequiredMessage_descripcion}"/>
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_adjuntarArchivo}" for="adjuntarArchivo" />
+                        <p:inputTextarea rows="4" cols="30" id="adjuntarArchivo" value="#{ordenController.selected.adjuntarArchivo}" title="#{bundle.EditOrdenTitle_adjuntarArchivo}" />
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_fechaAprobacion}" for="fechaAprobacion" />
+                        <p:calendar id="fechaAprobacion" pattern="MM/dd/yyyy" value="#{ordenController.selected.fechaAprobacion}" title="#{bundle.EditOrdenTitle_fechaAprobacion}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_solucion}" for="solucion" />
+                        <p:inputTextarea rows="4" cols="30" id="solucion" value="#{ordenController.selected.solucion}" title="#{bundle.EditOrdenTitle_solucion}" />
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_fechaSolucion}" for="fechaSolucion" />
+                        <p:calendar id="fechaSolucion" pattern="MM/dd/yyyy" value="#{ordenController.selected.fechaSolucion}" title="#{bundle.EditOrdenTitle_fechaSolucion}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_notas}" for="notas" />
+                        <p:inputTextarea rows="4" cols="30" id="notas" value="#{ordenController.selected.notas}" title="#{bundle.EditOrdenTitle_notas}" />
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_idProveedor}" for="idProveedor" />
+                        <p:selectOneMenu id="idProveedor" value="#{ordenController.selected.idProveedor}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"
+                                           var="idProveedorItem"
+                                           itemValue="#{idProveedorItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_idLider}" for="idLider" />
+                        <p:selectOneMenu id="idLider" value="#{ordenController.selected.idLider}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{liderinventarioController.itemsAvailableSelectOne}"
+                                           var="idLiderItem"
+                                           itemValue="#{idLiderItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_idJefe}" for="idJefe" />
+                        <p:selectOneMenu id="idJefe" value="#{ordenController.selected.idJefe}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{jefeinfraestructuraController.itemsAvailableSelectOne}"
+                                           var="idJefeItem"
+                                           itemValue="#{idJefeItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_idTipoOrden}" for="idTipoOrden" />
+                        <p:selectOneMenu id="idTipoOrden" value="#{ordenController.selected.idTipoOrden}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{tipoOrdenController.itemsAvailableSelectOne}"
+                                           var="idTipoOrdenItem"
+                                           itemValue="#{idTipoOrdenItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditOrdenLabel_idEstado}" for="idEstado" />
+                        <p:selectOneMenu id="idEstado" value="#{ordenController.selected.idEstado}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{estadosController.itemsAvailableSelectOne}"
+                                           var="idEstadoItem"
+                                           itemValue="#{idEstadoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{ordenController.update}" value="#{bundle.Save}" update="display,:OrdenListForm:datalist,:growl" oncomplete="handleSubmit(args, 'OrdenEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="OrdenEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

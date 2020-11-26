@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CasosEditDlg" widgetVar="CasosEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCasosTitle}">
+            <h:form id="CasosEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{casosController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCasosLabel_idCaso}" for="idCaso" />
+                        <p:inputText id="idCaso" value="#{casosController.selected.idCaso}" title="#{bundle.EditCasosTitle_idCaso}" required="true" requiredMessage="#{bundle.EditCasosRequiredMessage_idCaso}"/>
+                        <p:outputLabel value="#{bundle.EditCasosLabel_fechaCreacion}" for="fechaCreacion" />
+                        <p:calendar id="fechaCreacion" pattern="MM/dd/yyyy" value="#{casosController.selected.fechaCreacion}" title="#{bundle.EditCasosTitle_fechaCreacion}" required="true" requiredMessage="#{bundle.EditCasosRequiredMessage_fechaCreacion}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditCasosLabel_descripcion}" for="descripcion" />
+                        <p:inputTextarea rows="4" cols="30" id="descripcion" value="#{casosController.selected.descripcion}" title="#{bundle.EditCasosTitle_descripcion}" required="true" requiredMessage="#{bundle.EditCasosRequiredMessage_descripcion}"/>
+                        <p:outputLabel value="#{bundle.EditCasosLabel_solucion}" for="solucion" />
+                        <p:inputTextarea rows="4" cols="30" id="solucion" value="#{casosController.selected.solucion}" title="#{bundle.EditCasosTitle_solucion}" />
+                        <p:outputLabel value="#{bundle.EditCasosLabel_fechaSol}" for="fechaSol" />
+                        <p:calendar id="fechaSol" pattern="MM/dd/yyyy" value="#{casosController.selected.fechaSol}" title="#{bundle.EditCasosTitle_fechaSol}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditCasosLabel_notas}" for="notas" />
+                        <p:inputTextarea rows="4" cols="30" id="notas" value="#{casosController.selected.notas}" title="#{bundle.EditCasosTitle_notas}" />
+                        <p:outputLabel value="#{bundle.EditCasosLabel_idTipoCaso}" for="idTipoCaso" />
+                        <p:selectOneMenu id="idTipoCaso" value="#{casosController.selected.idTipoCaso}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{tipoCasoController.itemsAvailableSelectOne}"
+                                           var="idTipoCasoItem"
+                                           itemValue="#{idTipoCasoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditCasosLabel_idTecnico}" for="idTecnico" />
+                        <p:selectOneMenu id="idTecnico" value="#{casosController.selected.idTecnico}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{tecnicoController.itemsAvailableSelectOne}"
+                                           var="idTecnicoItem"
+                                           itemValue="#{idTecnicoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditCasosLabel_idJefe}" for="idJefe" />
+                        <p:selectOneMenu id="idJefe" value="#{casosController.selected.idJefe}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{jefeinfraestructuraController.itemsAvailableSelectOne}"
+                                           var="idJefeItem"
+                                           itemValue="#{idJefeItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditCasosLabel_idLider}" for="idLider" />
+                        <p:selectOneMenu id="idLider" value="#{casosController.selected.idLider}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{liderinventarioController.itemsAvailableSelectOne}"
+                                           var="idLiderItem"
+                                           itemValue="#{idLiderItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditCasosLabel_idEstado}" for="idEstado" />
+                        <p:selectOneMenu id="idEstado" value="#{casosController.selected.idEstado}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{estadosController.itemsAvailableSelectOne}"
+                                           var="idEstadoItem"
+                                           itemValue="#{idEstadoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditCasosLabel_idCliente}" for="idCliente" />
+                        <p:selectOneMenu id="idCliente" value="#{casosController.selected.idCliente}" required="true" requiredMessage="#{bundle.EditCasosRequiredMessage_idCliente}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{integranteColaboradorController.itemsAvailableSelectOne}"
+                                           var="idClienteItem"
+                                           itemValue="#{idClienteItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{casosController.update}" value="#{bundle.Save}" update="display,:CasosListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CasosEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CasosEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

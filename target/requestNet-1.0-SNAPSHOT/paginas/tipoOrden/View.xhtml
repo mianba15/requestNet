@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TipoOrdenViewDlg" widgetVar="TipoOrdenViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewTipoOrdenTitle}">
+            <h:form id="TipoOrdenViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tipoOrdenController.selected != null}">
+                        <h:outputText value="#{bundle.ViewTipoOrdenLabel_idTipoOrden}"/>
+                        <h:outputText value="#{tipoOrdenController.selected.idTipoOrden}" title="#{bundle.ViewTipoOrdenTitle_idTipoOrden}"/>
+                        <h:outputText value="#{bundle.ViewTipoOrdenLabel_nomTipoOrden}"/>
+                        <h:outputText value="#{tipoOrdenController.selected.nomTipoOrden}" title="#{bundle.ViewTipoOrdenTitle_nomTipoOrden}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="TipoOrdenViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Dashboard - requestNet</title>
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="icon" type="image/png" href="../resources/img/favicon.png"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/css/styles.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css"></link>            
+        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/bootstrap/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/font-awesome/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/linearicons/style.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/chartist/css/chartist-custom.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/css/main.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/css/demo.css"></link>
+    </head>
+    <body>
+        <div id="wrapper">
+
+        <div class="iconBurger">
+            <div class="hamburger">
+                <div class="layerBurger topBurger"></div>
+                <div class="layerBurger midBurger"></div>
+                <div class="layerBurger bottomBurger"></div>
+            </div>
+        </div>
+        <nav class="menuGeneral">
+            
+        </nav>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="brand">
+                <a href=""><img src="../resources/img/logoColorRN.png" alt="RequestNet" class="img-responsive logo "></img></a>
+            </div>
+            <div class="container-fluid">
+
+                <div id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../resources/img/userMen2.jpg" class="img-circle" alt="Avatar"></img><span>Miguel Baron</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="lnr lnr-user"></i> <span>Lider Inventario</span></a></li>
+                                <!--<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
+                                <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>-->
+                                <li><a href="../"><i class="lnr lnr-exit"></i> <span>Salir</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="sidebar-nav" class="sidebar">
+            <div class="sidebar-scroll">
+                <nav>
+                    <ul class="nav">
+                        <li><a href="dashboard.xhtml" class="active"><i class="lnr lnr-home"></i> <span>Escritorio</span></a></li>
+                        <li><a href="inventario.xhtml" class=""><i class="lnr lnr-file-empty"></i> <span>Inventario</span></a></li>
+                        <li><a href="novedades.xhtml" class=""><i class="lnr lnr lnr-layers"></i> <span>Novedades</span></a></li>
+                        <li><a href="proveedores.xhtml" class=""><i class="lnr lnr-cog"></i> <span>Proveedores</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main-content">
+                <div class="container-fluid">
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-headline">
+                                <div class="panel-body">
+                                    <div class="titleModul">
+                                        <h2>Inventario</h2>
+                                    </div>
+                                    
+                                    <div class="colorCuadros">
+                                        <ul>
+                                            <li><span class="progress-bar-success"></span><p>Disponible</p></li>
+                                            <li><span class="progress-bar-error"></span><p>En uso</p></li>
+                                            <li><span class="progress-bar-warning"></span><p>Repotenciar</p></li>
+                                            <li><span class="progress-bar-danger"></span><p>De baja</p></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <ul class="list-unstyled task-list">
+                                        <li>
+                                            
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" style="width:12%">
+                                                    <span class="sr-only">12% Complete</span>
+                                                </div>
+                                            </div>
+                                            <span class="label-percent">12%</span>
+                                        </li>
+                                        <li>
+                                            
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar progress-bar-error" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width: 68%">
+                                                    <span class="sr-only">68% Complete</span>
+                                                </div>
+                                            </div>
+                                            <span class="label-percent">68%</span>
+                                        </li>
+                                        <li>
+                                            
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" style="width: 12%">
+                                                    <span class="sr-only">12% Complete</span>
+                                                </div>
+                                            </div>
+                                            <span class="label-percent">12%</span>
+                                        </li>
+                                        <li>
+                                            
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100" style="width: 8%">
+                                                    <span class="sr-only">8% Complete</span>
+                                                </div>
+                                            </div>
+                                            <span class="label-percent">8%</span>
+                                        </li>
+                                    </ul>
+                                    <div class="">
+                                        <h3><a class="buttonLineRed" href="inventario.jsp">Ver inventario</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-6">
+                            <div class="panel panel-headline">
+                                <div class="panel-body">
+                                    <div class="titleModul">
+                                        <h2>Novedades</h2>
+                                    </div>
+                                    <div id="headline-chart" class="ct-chart"></div>
+                                    <div class="">
+                                        <h3><a class="buttonLineRed" href="novedades.jsp">Ver novedades</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <div class="panel panel-headline">
+                                <div class="panel-body">
+                                    <div class="titleModul">
+                                        <h2>Proveedores</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../resources/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../resources/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../resources/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+    <script src="../resources/assets/vendor/chartist/js/chartist.min.js"></script>
+    <script src="../resources/assets/vendor/chartist/js/chartist_datos.js"></script>
+    <script src="../resources/js/navmenu.js" type="text/javascript"></script>
+    <script src="../resources/js/menu.js" type="text/javascript"></script>
+    </body>
+</html>

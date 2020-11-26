@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="JefeinfraestructuraCreateDlg" widgetVar="JefeinfraestructuraCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateJefeinfraestructuraTitle}">
+            <h:form id="JefeinfraestructuraCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{jefeinfraestructuraController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateJefeinfraestructuraLabel_idJefe}" for="idJefe" />
+                        <p:inputText id="idJefe" value="#{jefeinfraestructuraController.selected.idJefe}" title="#{bundle.CreateJefeinfraestructuraTitle_idJefe}" required="true" requiredMessage="#{bundle.CreateJefeinfraestructuraRequiredMessage_idJefe}"/>
+                        <p:outputLabel value="#{bundle.CreateJefeinfraestructuraLabel_idUsuario}" for="idUsuario" />
+                        <p:selectOneMenu id="idUsuario" value="#{jefeinfraestructuraController.selected.idUsuario}" >
+                            <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"
+                                           var="idUsuarioItem"
+                                           itemValue="#{idUsuarioItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{jefeinfraestructuraController.create}" value="#{bundle.Save}" update="display,:JefeinfraestructuraListForm:datalist,:growl" oncomplete="handleSubmit(args,'JefeinfraestructuraCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="JefeinfraestructuraCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

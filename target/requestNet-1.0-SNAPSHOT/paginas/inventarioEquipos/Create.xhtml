@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="InventarioEquiposCreateDlg" widgetVar="InventarioEquiposCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateInventarioEquiposTitle}">
+            <h:form id="InventarioEquiposCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{inventarioEquiposController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateInventarioEquiposLabel_idEquipo}" for="idEquipo" />
+                        <p:inputText id="idEquipo" value="#{inventarioEquiposController.selected.idEquipo}" title="#{bundle.CreateInventarioEquiposTitle_idEquipo}" required="true" requiredMessage="#{bundle.CreateInventarioEquiposRequiredMessage_idEquipo}"/>
+                        <p:outputLabel value="#{bundle.CreateInventarioEquiposLabel_serial}" for="serial" />
+                        <p:inputText id="serial" value="#{inventarioEquiposController.selected.serial}" title="#{bundle.CreateInventarioEquiposTitle_serial}" required="true" requiredMessage="#{bundle.CreateInventarioEquiposRequiredMessage_serial}"/>
+                        <p:outputLabel value="#{bundle.CreateInventarioEquiposLabel_idCliente}" for="idCliente" />
+                        <p:selectOneMenu id="idCliente" value="#{inventarioEquiposController.selected.idCliente}" >
+                            <f:selectItems value="#{integranteColaboradorController.itemsAvailableSelectOne}"
+                                           var="idClienteItem"
+                                           itemValue="#{idClienteItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateInventarioEquiposLabel_idTipoComponente}" for="idTipoComponente" />
+                        <p:selectOneMenu id="idTipoComponente" value="#{inventarioEquiposController.selected.idTipoComponente}" >
+                            <f:selectItems value="#{tipoComponenteController.itemsAvailableSelectOne}"
+                                           var="idTipoComponenteItem"
+                                           itemValue="#{idTipoComponenteItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateInventarioEquiposLabel_idMarca}" for="idMarca" />
+                        <p:selectOneMenu id="idMarca" value="#{inventarioEquiposController.selected.idMarca}" >
+                            <f:selectItems value="#{marcaController.itemsAvailableSelectOne}"
+                                           var="idMarcaItem"
+                                           itemValue="#{idMarcaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateInventarioEquiposLabel_idTipoProcedencia}" for="idTipoProcedencia" />
+                        <p:selectOneMenu id="idTipoProcedencia" value="#{inventarioEquiposController.selected.idTipoProcedencia}" >
+                            <f:selectItems value="#{tipoProcedenciaController.itemsAvailableSelectOne}"
+                                           var="idTipoProcedenciaItem"
+                                           itemValue="#{idTipoProcedenciaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateInventarioEquiposLabel_idJefe}" for="idJefe" />
+                        <p:selectOneMenu id="idJefe" value="#{inventarioEquiposController.selected.idJefe}" >
+                            <f:selectItems value="#{jefeinfraestructuraController.itemsAvailableSelectOne}"
+                                           var="idJefeItem"
+                                           itemValue="#{idJefeItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateInventarioEquiposLabel_idLider}" for="idLider" />
+                        <p:selectOneMenu id="idLider" value="#{inventarioEquiposController.selected.idLider}" >
+                            <f:selectItems value="#{liderinventarioController.itemsAvailableSelectOne}"
+                                           var="idLiderItem"
+                                           itemValue="#{idLiderItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateInventarioEquiposLabel_idEstadoeq}" for="idEstadoeq" />
+                        <p:selectOneMenu id="idEstadoeq" value="#{inventarioEquiposController.selected.idEstadoeq}" >
+                            <f:selectItems value="#{estadoEqController.itemsAvailableSelectOne}"
+                                           var="idEstadoeqItem"
+                                           itemValue="#{idEstadoeqItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{inventarioEquiposController.create}" value="#{bundle.Save}" update="display,:InventarioEquiposListForm:datalist,:growl" oncomplete="handleSubmit(args,'InventarioEquiposCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="InventarioEquiposCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

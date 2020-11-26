@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CasosViewDlg" widgetVar="CasosViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCasosTitle}">
+            <h:form id="CasosViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{casosController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCasosLabel_idCaso}"/>
+                        <h:outputText value="#{casosController.selected.idCaso}" title="#{bundle.ViewCasosTitle_idCaso}"/>
+                        <h:outputText value="#{bundle.ViewCasosLabel_fechaCreacion}"/>
+                        <h:outputText value="#{casosController.selected.fechaCreacion}" title="#{bundle.ViewCasosTitle_fechaCreacion}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewCasosLabel_descripcion}"/>
+                        <h:outputText value="#{casosController.selected.descripcion}" title="#{bundle.ViewCasosTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewCasosLabel_solucion}"/>
+                        <h:outputText value="#{casosController.selected.solucion}" title="#{bundle.ViewCasosTitle_solucion}"/>
+                        <h:outputText value="#{bundle.ViewCasosLabel_fechaSol}"/>
+                        <h:outputText value="#{casosController.selected.fechaSol}" title="#{bundle.ViewCasosTitle_fechaSol}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewCasosLabel_notas}"/>
+                        <h:outputText value="#{casosController.selected.notas}" title="#{bundle.ViewCasosTitle_notas}"/>
+                        <h:outputText value="#{bundle.ViewCasosLabel_idTipoCaso}"/>
+                        <h:outputText value="#{casosController.selected.idTipoCaso}" title="#{bundle.ViewCasosTitle_idTipoCaso}"/>
+                        <h:outputText value="#{bundle.ViewCasosLabel_idTecnico}"/>
+                        <h:outputText value="#{casosController.selected.idTecnico}" title="#{bundle.ViewCasosTitle_idTecnico}"/>
+                        <h:outputText value="#{bundle.ViewCasosLabel_idJefe}"/>
+                        <h:outputText value="#{casosController.selected.idJefe}" title="#{bundle.ViewCasosTitle_idJefe}"/>
+                        <h:outputText value="#{bundle.ViewCasosLabel_idLider}"/>
+                        <h:outputText value="#{casosController.selected.idLider}" title="#{bundle.ViewCasosTitle_idLider}"/>
+                        <h:outputText value="#{bundle.ViewCasosLabel_idEstado}"/>
+                        <h:outputText value="#{casosController.selected.idEstado}" title="#{bundle.ViewCasosTitle_idEstado}"/>
+                        <h:outputText value="#{bundle.ViewCasosLabel_idCliente}"/>
+                        <h:outputText value="#{casosController.selected.idCliente}" title="#{bundle.ViewCasosTitle_idCliente}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CasosViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

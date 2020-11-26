@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="OrdenViewDlg" widgetVar="OrdenViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewOrdenTitle}">
+            <h:form id="OrdenViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{ordenController.selected != null}">
+                        <h:outputText value="#{bundle.ViewOrdenLabel_idOrden}"/>
+                        <h:outputText value="#{ordenController.selected.idOrden}" title="#{bundle.ViewOrdenTitle_idOrden}"/>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_descripcion}"/>
+                        <h:outputText value="#{ordenController.selected.descripcion}" title="#{bundle.ViewOrdenTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_adjuntarArchivo}"/>
+                        <h:outputText value="#{ordenController.selected.adjuntarArchivo}" title="#{bundle.ViewOrdenTitle_adjuntarArchivo}"/>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_fechaAprobacion}"/>
+                        <h:outputText value="#{ordenController.selected.fechaAprobacion}" title="#{bundle.ViewOrdenTitle_fechaAprobacion}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_solucion}"/>
+                        <h:outputText value="#{ordenController.selected.solucion}" title="#{bundle.ViewOrdenTitle_solucion}"/>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_fechaSolucion}"/>
+                        <h:outputText value="#{ordenController.selected.fechaSolucion}" title="#{bundle.ViewOrdenTitle_fechaSolucion}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_notas}"/>
+                        <h:outputText value="#{ordenController.selected.notas}" title="#{bundle.ViewOrdenTitle_notas}"/>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_idProveedor}"/>
+                        <h:outputText value="#{ordenController.selected.idProveedor}" title="#{bundle.ViewOrdenTitle_idProveedor}"/>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_idLider}"/>
+                        <h:outputText value="#{ordenController.selected.idLider}" title="#{bundle.ViewOrdenTitle_idLider}"/>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_idJefe}"/>
+                        <h:outputText value="#{ordenController.selected.idJefe}" title="#{bundle.ViewOrdenTitle_idJefe}"/>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_idTipoOrden}"/>
+                        <h:outputText value="#{ordenController.selected.idTipoOrden}" title="#{bundle.ViewOrdenTitle_idTipoOrden}"/>
+                        <h:outputText value="#{bundle.ViewOrdenLabel_idEstado}"/>
+                        <h:outputText value="#{ordenController.selected.idEstado}" title="#{bundle.ViewOrdenTitle_idEstado}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="OrdenViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

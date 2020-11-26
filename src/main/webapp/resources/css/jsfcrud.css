@@ -1,0 +1,242 @@
+.ui-widget {
+    font-size: 12px !important;
+}
+.ui-layout-north {
+    z-index: 20 !important;
+    overflow: visible !important;;
+}
+.ui-layout-north .ui-layout-unit-content {
+    overflow: visible !important;
+}
+.ui-widget-header {
+    text-align: center;
+    text-transform: uppercase;
+}
+.ui-button {
+    margin-top: 0px !important;
+}
+.ui-panel .ui-panel-titlebar {
+    display: none !important;
+}
+.ui-panel .ui-panel-content {
+    border: 0;
+    background: none;
+    padding: 0 !important;
+}
+.ui-panel {
+    padding: 0 !important;
+}
+.ui-widget-content {
+    border: none !important;
+    background: #ffffff;
+}
+.ui-datatable table {
+    table-layout: inherit !important;
+}
+.ui-datatable .ui-paginator, .ui-datatable .ui-paginator {
+    padding: 0 !important;
+}
+.ui-datatable .ui-datatable-header, .ui-datatable .ui-datatable-footer {
+    text-align: left!important;
+    padding: 0px 0px!important;
+}
+.ui-widget-header {
+    border: none !important;
+    background: transparent !important;
+    text-shadow: none !important;
+}
+.ui-layout-unit, .ui-layout-unit-content {
+    padding: 5px 0 0 0 !important;
+}
+.ui-datatable tbody td {
+    border-bottom: none !important;
+    border-left: 1px solid #a8a8a8!important;
+    border-right: 0px solid #a8a8a8 !important;
+    border-top: 1px solid #a8a8a8 !important;
+}
+.ui-datatable tbody td:first-child {
+    border-left: 0px !important;
+}
+.ui-datatable tbody td:last-child {
+    border-right: 0px !important;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    border: none;
+    background: transparent !important;
+    font-weight: bold;
+    color: #4f4f4f;
+    text-shadow: none;
+}
+.ui-state-default.progress-bar-success {
+    
+}
+.ui-state-default {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.ui-paginator {
+    margin: 10px 0 0 0!important;
+}
+.ui-paginator-page.ui-state-default.ui-state-active,
+.ui-paginator-page.ui-state-default.ui-state-hover {
+    background: #f47b2b !important;
+    color: white;
+}
+tr.ui-widget-content.ui-datatable-selectable.ui-state-hover {
+    background: rgba(1, 170, 255, .2) !important;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {
+    background: rgba(1, 170, 255, .2) !important;
+    color: #252c35;
+    text-shadow: none !important;
+}
+.ui-paginator .ui-paginator-page,
+.ui-paginator .ui-paginator-pages,
+.ui-paginator .ui-paginator-current {
+    padding: 2px 10px!important;
+    margin-left: 3px!important;
+    margin-right: 3px!important;
+    height: auto!important;
+    line-height: 20px!important;
+}
+.ui-paginator .ui-paginator-next,
+.ui-paginator .ui-paginator-last,
+.ui-paginator .ui-paginator-first,
+.ui-paginator .ui-paginator-prev {
+    background: transparent!important;
+    padding: 4px 6px 0px 6px!important;
+    margin-left: 3px!important;
+    margin-right: 3px!important;
+    height: auto!important;
+    line-height: 20px!important;
+}
+select.ui-paginator-rpp-options,
+select.ui-paginator-rpp-options.ui-state-hover {
+    border: none !important;
+    background: transparent !important;
+    font-family: 'allerregular' !important;
+    margin-right: 0px !important;
+    padding: 7px 2px !important;
+    border-radius: 0px !important;
+    width: 5% !important;
+}
+select:focus {
+    box-shadow: none!important;
+    display: none;
+    outline: none!important;
+}
+.ui-paginator-rpp-options {
+    display: none;
+}
+
+.ui-datatable .ui-column-filter {
+    display: block!important;
+    width: 70px!important;
+    margin: 0 auto 5px auto!important;
+    height: 20px!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    border: 1px solid #cccccc!important;
+}
+.ui-datatable .ui-filter-column span.ui-column-title {
+    display: block;
+    margin: 5px 0!important;    
+}
+
+.btnCrear span.ui-button-text.ui-c {
+    background: #5cb85c;
+    border: 2px solid #5cb85c;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+.btnCrear:hover span.ui-button-text.ui-c {
+    background: transparent;
+    border: 2px solid #5cb85c;
+    color: #5cb85c;
+}
+.btnVer span.ui-button-text.ui-c {
+    background: #01aaff;
+    border: 2px solid #01aaff;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+.btnVer:hover span.ui-button-text.ui-c {
+    background: transparent;
+    border: 2px solid #01aaff;
+    color: #01aaff;
+}
+.btnEditar span.ui-button-text.ui-c {
+    background: #f0ad4e;
+    border: 2px solid #f0ad4e;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+.btnEditar:hover span.ui-button-text.ui-c {
+    background: transparent;
+    border: 2px solid #f0ad4e;
+    color: #f0ad4e;
+}
+.btnBorrar span.ui-button-text.ui-c {
+    background: #F9354C;
+    border: 2px solid #F9354C;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+.btnBorrar:hover span.ui-button-text.ui-c {
+    background: transparent;
+    border: 2px solid #F9354C;
+    color: #F9354C;
+}
+.btnCrear span.ui-button-icon-left.ui-icon.ui-c.ui-icon-plus,
+.btnVer span.ui-button-icon-left.ui-icon.ui-c.ui-icon-plus,
+.btnEditar span.ui-button-icon-left.ui-icon.ui-c.ui-icon-plus,
+.btnBorrar span.ui-button-icon-left.ui-icon.ui-c.ui-icon-plus {
+    display: none;
+}
+
+label.ui-widget {
+    margin-bottom: 0;
+}
+.ui-selectonemenu .ui-selectonemenu-label {
+    width: 100%!important;
+}
+.ui-selectonemenu.ui-widget.ui-state-default {
+    width: 100%!important;
+}
+.ui-selectonemenu.ui-widget.ui-state-default.ui-state-focus {
+    box-shadow: none!important;
+    display: none;
+    outline: none!important;
+}
+
+.ui-panelgrid .ui-panelgrid-cell textarea {
+    height: 25px !important;
+}

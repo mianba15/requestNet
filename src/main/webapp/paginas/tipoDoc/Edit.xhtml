@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TipoDocEditDlg" widgetVar="TipoDocEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditTipoDocTitle}">
+            <h:form id="TipoDocEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tipoDocController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditTipoDocLabel_idTipdoc}" for="idTipdoc" />
+                        <p:inputText id="idTipdoc" value="#{tipoDocController.selected.idTipdoc}" title="#{bundle.EditTipoDocTitle_idTipdoc}" required="true" requiredMessage="#{bundle.EditTipoDocRequiredMessage_idTipdoc}"/>
+                        <p:outputLabel value="#{bundle.EditTipoDocLabel_nombreTipdoc}" for="nombreTipdoc" />
+                        <p:inputText id="nombreTipdoc" value="#{tipoDocController.selected.nombreTipdoc}" title="#{bundle.EditTipoDocTitle_nombreTipdoc}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tipoDocController.update}" value="#{bundle.Save}" update="display,:TipoDocListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TipoDocEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TipoDocEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

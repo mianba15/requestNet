@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EstadoEqCreateDlg" widgetVar="EstadoEqCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEstadoEqTitle}">
+            <h:form id="EstadoEqCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{estadoEqController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateEstadoEqLabel_idEstadoeq}" for="idEstadoeq" />
+                        <p:inputText id="idEstadoeq" value="#{estadoEqController.selected.idEstadoeq}" title="#{bundle.CreateEstadoEqTitle_idEstadoeq}" required="true" requiredMessage="#{bundle.CreateEstadoEqRequiredMessage_idEstadoeq}"/>
+                        <p:outputLabel value="#{bundle.CreateEstadoEqLabel_nomEstadoeq}" for="nomEstadoeq" />
+                        <p:inputText id="nomEstadoeq" value="#{estadoEqController.selected.nomEstadoeq}" title="#{bundle.CreateEstadoEqTitle_nomEstadoeq}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{estadoEqController.create}" value="#{bundle.Save}" update="display,:EstadoEqListForm:datalist,:growl" oncomplete="handleSubmit(args,'EstadoEqCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EstadoEqCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TipoProcedenciaCreateDlg" widgetVar="TipoProcedenciaCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTipoProcedenciaTitle}">
+            <h:form id="TipoProcedenciaCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tipoProcedenciaController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTipoProcedenciaLabel_idTipoProcedencia}" for="idTipoProcedencia" />
+                        <p:inputText id="idTipoProcedencia" value="#{tipoProcedenciaController.selected.idTipoProcedencia}" title="#{bundle.CreateTipoProcedenciaTitle_idTipoProcedencia}" required="true" requiredMessage="#{bundle.CreateTipoProcedenciaRequiredMessage_idTipoProcedencia}"/>
+                        <p:outputLabel value="#{bundle.CreateTipoProcedenciaLabel_idOrden}" for="idOrden" />
+                        <p:selectOneMenu id="idOrden" value="#{tipoProcedenciaController.selected.idOrden}" >
+                            <f:selectItems value="#{ordenController.itemsAvailableSelectOne}"
+                                           var="idOrdenItem"
+                                           itemValue="#{idOrdenItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tipoProcedenciaController.create}" value="#{bundle.Save}" update="display,:TipoProcedenciaListForm:datalist,:growl" oncomplete="handleSubmit(args,'TipoProcedenciaCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TipoProcedenciaCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

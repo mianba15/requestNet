@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TipoComponenteEditDlg" widgetVar="TipoComponenteEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditTipoComponenteTitle}">
+            <h:form id="TipoComponenteEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tipoComponenteController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditTipoComponenteLabel_idTipoComponente}" for="idTipoComponente" />
+                        <p:inputText id="idTipoComponente" value="#{tipoComponenteController.selected.idTipoComponente}" title="#{bundle.EditTipoComponenteTitle_idTipoComponente}" required="true" requiredMessage="#{bundle.EditTipoComponenteRequiredMessage_idTipoComponente}"/>
+                        <p:outputLabel value="#{bundle.EditTipoComponenteLabel_nomTipoComponente}" for="nomTipoComponente" />
+                        <p:inputText id="nomTipoComponente" value="#{tipoComponenteController.selected.nomTipoComponente}" title="#{bundle.EditTipoComponenteTitle_nomTipoComponente}" />
+                        <p:outputLabel value="#{bundle.EditTipoComponenteLabel_cantidad}" for="cantidad" />
+                        <p:inputText id="cantidad" value="#{tipoComponenteController.selected.cantidad}" title="#{bundle.EditTipoComponenteTitle_cantidad}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tipoComponenteController.update}" value="#{bundle.Save}" update="display,:TipoComponenteListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TipoComponenteEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TipoComponenteEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
