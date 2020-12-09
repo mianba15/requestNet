@@ -99,7 +99,7 @@ public class Proveedores implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Proveedores[ idProveedor=" + idProveedor + " ]";
+        return this.idUsuario.getNombres() + this.idUsuario.getApellidos();
     }
     
 }

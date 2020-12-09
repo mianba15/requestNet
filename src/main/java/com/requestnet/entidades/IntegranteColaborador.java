@@ -111,7 +111,7 @@ public class IntegranteColaborador implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.IntegranteColaborador[ idCliente=" + idCliente + " ]";
+        return this.idUsuario.getNombres() + this.idUsuario.getApellidos();
     }
     
 }

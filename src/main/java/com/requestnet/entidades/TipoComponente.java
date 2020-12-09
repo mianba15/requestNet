@@ -111,7 +111,7 @@ public class TipoComponente implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.TipoComponente[ idTipoComponente=" + idTipoComponente + " ]";
+        return this.getNomTipoComponente();
     }
     
 }

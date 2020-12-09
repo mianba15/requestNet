@@ -65,7 +65,7 @@
                                             case 4:
                                             sesion.setAttribute("correo", usuario);
                                             sesion.setAttribute("rol", "4");
-                                            response.sendRedirect("proveedor/index.jsp");
+                                            response.sendRedirect("proveedor/index.xhtml");
                                             
                                         break;
                                             default:

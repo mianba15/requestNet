@@ -100,7 +100,7 @@ public class TipoProcedencia implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.TipoProcedencia[ idTipoProcedencia=" + idTipoProcedencia + " ]";
+        return "" + idTipoProcedencia;
     }
     
 }

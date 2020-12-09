@@ -100,7 +100,7 @@ public class TipoOrden implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.TipoOrden[ idTipoOrden=" + idTipoOrden + " ]";
+        return this.getNomTipoOrden();
     }
     
 }

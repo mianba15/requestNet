@@ -328,7 +328,7 @@ public class Usuarios implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Usuarios[ idUsuario=" + idUsuario + " ]";
+        return this.getNombres() + this.getApellidos();
     }
     
 }

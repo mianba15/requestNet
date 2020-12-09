@@ -12,46 +12,50 @@
             <h:form id="OrdenCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{ordenController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateOrdenLabel_idOrden}" for="idOrden" />
-                        <p:inputText id="idOrden" value="#{ordenController.selected.idOrden}" title="#{bundle.CreateOrdenTitle_idOrden}" required="true" requiredMessage="#{bundle.CreateOrdenRequiredMessage_idOrden}"/>
-                        <p:outputLabel value="#{bundle.CreateOrdenLabel_descripcion}" for="descripcion" />
+                        
+                        <p:outputLabel value="#{bundle.CreateOrdenLabel_descripcion}" for="descripcion"  />
                         <p:inputTextarea rows="4" cols="30" id="descripcion" value="#{ordenController.selected.descripcion}" title="#{bundle.CreateOrdenTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateOrdenRequiredMessage_descripcion}"/>
-                        <p:outputLabel value="#{bundle.CreateOrdenLabel_adjuntarArchivo}" for="adjuntarArchivo" />
-                        <p:inputTextarea rows="4" cols="30" id="adjuntarArchivo" value="#{ordenController.selected.adjuntarArchivo}" title="#{bundle.CreateOrdenTitle_adjuntarArchivo}" />
+                        <p:outputLabel value="#{bundle.CreateOrdenLabel_adjuntarArchivo}" for="adjuntarArchivo"  />
+                        <p:inputTextarea rows="4" cols="30" id="adjuntarArchivo" value="#{ordenController.selected.adjuntarArchivo}" title="#{bundle.CreateOrdenTitle_adjuntarArchivo}" required="true" requiredMessage="#{bundle.MessageItemRequired}" />
                         <p:outputLabel value="#{bundle.CreateOrdenLabel_fechaAprobacion}" for="fechaAprobacion" />
-                        <p:calendar id="fechaAprobacion" pattern="MM/dd/yyyy" value="#{ordenController.selected.fechaAprobacion}" title="#{bundle.EditOrdenTitle_fechaAprobacion}"  showOn="button"/>
+                        <p:calendar id="fechaAprobacion" pattern="MM/dd/yyyy" value="#{ordenController.selected.fechaAprobacion}" title="#{bundle.EditOrdenTitle_fechaAprobacion}" required="true" requiredMessage="#{bundle.MessageItemRequired}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateOrdenLabel_solucion}" for="solucion" />
-                        <p:inputTextarea rows="4" cols="30" id="solucion" value="#{ordenController.selected.solucion}" title="#{bundle.CreateOrdenTitle_solucion}" />
+                        <p:inputTextarea rows="4" cols="30" id="solucion" value="#{ordenController.selected.solucion}" title="#{bundle.CreateOrdenTitle_solucion}" required="true" requiredMessage="#{bundle.MessageItemRequired}"/>
                         <p:outputLabel value="#{bundle.CreateOrdenLabel_fechaSolucion}" for="fechaSolucion" />
-                        <p:calendar id="fechaSolucion" pattern="MM/dd/yyyy" value="#{ordenController.selected.fechaSolucion}" title="#{bundle.EditOrdenTitle_fechaSolucion}"  showOn="button"/>
+                        <p:calendar id="fechaSolucion" pattern="MM/dd/yyyy" value="#{ordenController.selected.fechaSolucion}" title="#{bundle.EditOrdenTitle_fechaSolucion}" required="true" requiredMessage="#{bundle.MessageItemRequired}" showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateOrdenLabel_notas}" for="notas" />
-                        <p:inputTextarea rows="4" cols="30" id="notas" value="#{ordenController.selected.notas}" title="#{bundle.CreateOrdenTitle_notas}" />
+                        <p:inputTextarea rows="4" cols="30" id="notas" value="#{ordenController.selected.notas}" title="#{bundle.CreateOrdenTitle_notas}" required="true" requiredMessage="#{bundle.MessageItemRequired}"/>
                         <p:outputLabel value="#{bundle.CreateOrdenLabel_idProveedor}" for="idProveedor" />
-                        <p:selectOneMenu id="idProveedor" value="#{ordenController.selected.idProveedor}" >
+                        <p:selectOneMenu id="idProveedor" value="#{ordenController.selected.idProveedor}" required="true" requiredMessage="#{bundle.MessageItemRequired}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"
                                            var="idProveedorItem"
                                            itemValue="#{idProveedorItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateOrdenLabel_idLider}" for="idLider" />
-                        <p:selectOneMenu id="idLider" value="#{ordenController.selected.idLider}" >
+                        <p:selectOneMenu id="idLider" value="#{ordenController.selected.idLider}" required="true" requiredMessage="#{bundle.MessageItemRequired}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{liderinventarioController.itemsAvailableSelectOne}"
                                            var="idLiderItem"
                                            itemValue="#{idLiderItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateOrdenLabel_idJefe}" for="idJefe" />
-                        <p:selectOneMenu id="idJefe" value="#{ordenController.selected.idJefe}" >
+                        <p:selectOneMenu id="idJefe" value="#{ordenController.selected.idJefe}" required="true" requiredMessage="#{bundle.MessageItemRequired}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{jefeinfraestructuraController.itemsAvailableSelectOne}"
                                            var="idJefeItem"
                                            itemValue="#{idJefeItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateOrdenLabel_idTipoOrden}" for="idTipoOrden" />
-                        <p:selectOneMenu id="idTipoOrden" value="#{ordenController.selected.idTipoOrden}" >
+                        <p:selectOneMenu id="idTipoOrden" value="#{ordenController.selected.idTipoOrden}" required="true" requiredMessage="#{bundle.MessageItemRequired}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{tipoOrdenController.itemsAvailableSelectOne}"
                                            var="idTipoOrdenItem"
                                            itemValue="#{idTipoOrdenItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateOrdenLabel_idEstado}" for="idEstado" />
-                        <p:selectOneMenu id="idEstado" value="#{ordenController.selected.idEstado}" >
+                        <p:selectOneMenu id="idEstado" value="#{ordenController.selected.idEstado}" required="true" requiredMessage="#{bundle.MessageItemRequired}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{estadosController.itemsAvailableSelectOne}"
                                            var="idEstadoItem"
                                            itemValue="#{idEstadoItem}"/>

@@ -99,7 +99,7 @@ public class Tecnico implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Tecnico[ idTecnico=" + idTecnico + " ]";
+        return this.idUsuario.getNombres() + this.idUsuario.getApellidos();
     }
     
 }

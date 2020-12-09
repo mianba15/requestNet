@@ -228,7 +228,7 @@ public class Orden implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Orden[ idOrden=" + idOrden + " ]";
+        return this.idTipoOrden.getNomTipoOrden();
     }
     
 }

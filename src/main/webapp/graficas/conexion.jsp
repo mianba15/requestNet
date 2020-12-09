@@ -14,14 +14,14 @@
     <body>
         <%
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:8889/WebRequestNet?user=WebRequestNet&password=pass12345");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:8889/requestnetweb?user=root&password=root");
                 
             Statement cmd = cn.createStatement();
             String sql = "SELECT usuarios.nombres, COUNT(*) AS Total FROM casos INNER JOIN tecnico ON tecnico.id_tecnico = casos.id_tecnico INNER JOIN usuarios ON tecnico.id_usuario = usuarios.id_usuario GROUP BY usuarios.nombres";
             ResultSet rs = cmd.executeQuery(sql);
 
             Statement cmd1 = cn.createStatement();
-            String sql1 = "SELECT inventario_equipos.estado_equipo, COUNT(*) AS TotalEquipos FROM inventario_equipos GROUP BY estado_equipo";
+            String sql1 = "SELECT nom_estadoeq, COUNT(*) AS TotalEquipos FROM inventario_equipos INNER JOIN estado_eq ON inventario_equipos.id_estadoeq = estado_eq.id_estadoeq GROUP BY nom_estadoeq";
             ResultSet rs1 = cmd1.executeQuery(sql1);
             
             Statement cmd2 = cn.createStatement();

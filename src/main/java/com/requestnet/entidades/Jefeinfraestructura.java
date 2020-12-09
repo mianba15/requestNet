@@ -121,7 +121,7 @@ public class Jefeinfraestructura implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Jefeinfraestructura[ idJefe=" + idJefe + " ]";
+        return this.idUsuario.getNombres() + this.idUsuario.getApellidos();
     }
     
 }

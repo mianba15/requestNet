@@ -100,7 +100,7 @@ public class Marca implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Marca[ idMarca=" + idMarca + " ]";
+        return this.nomMarca;
     }
     
 }

@@ -7,7 +7,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <head>
-        <title>Dashboard - requestNet</title>
+        <title>requestNet - Dashboard</title>
         <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="icon" type="image/png" href="../resources/img/favicon.png"></link>
@@ -41,10 +41,10 @@
                 <div id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../resources/img/userWomen4.jpg" class="img-circle" alt="Avatar"></img><span>Leidy Alfonso</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../resources/img/userMen3.jpg" class="img-circle" alt="Avatar"></img><span>Daniel Cortes</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="lnr lnr-user"></i> <span>Jefe Infraestructura</span></a></li>
-                                <li><a href="../email/index.xhtml"><i class="lnr lnr-envelope"></i> <span>Enviar mensaje</span></a></li>
+                                <li><a href="#"><i class="lnr lnr-user"></i> <span>Técnico Senior</span></a></li>
+                                <li><a href="../email/emailTecnico.xhtml"><i class="lnr lnr-envelope"></i> <span>Enviar mensaje</span></a></li>
                                 <!--<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>-->
                                 <li><a href="../"><i class="lnr lnr-exit"></i> <span>Salir</span></a></li>
                             </ul>
@@ -58,12 +58,9 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-                        <li><a href="dashboard.jsp"     class="active"><i class="lnr lnr-home"></i> <span>Escritorio</span></a></li>
-                        <li><a href="inventario.xhtml"  class=""><i class="lnr lnr-file-empty"></i> <span>Inventario</span></a></li>
-                        <li><a href="novedades.xhtml"   class=""><i class="lnr lnr lnr-layers"></i> <span>Novedades</span></a></li>
-                        <li><a href="proveedores.xhtml" class=""><i class="lnr lnr-cog"></i> <span>Proveedores</span></a></li>
-                        <li><a href="usuarios.xhtml"    class=""><i class="lnr lnr-users"></i> <span>Usuarios</span></a></li>
-                        <li><a href="procesos-almacenados.jsp" class=""><i class="lnr lnr-users"></i> <span>Procesos</span></a></li>
+                        <li><a href="dashboard.jsp" class="active"><i class="lnr lnr-home"></i> <span>Escritorio</span></a></li>
+                        <li><a href="inventario.xhtml" class=""><i class="lnr lnr-file-empty"></i> <span>Inventario</span></a></li>
+                        <li><a href="novedades.xhtml" class=""><i class="lnr lnr lnr-layers"></i> <span>Novedades</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -105,7 +102,7 @@
                                         <h2>Inventario</h2>
                                     </div>
                                     
-                                    <iframe style="border:0" width="100%" height="440" src="http://localhost:8080/WebRequestNet/graficas/inventario.jsp"></iframe>
+                                    <iframe style="border:0" width="100%" height="440" src="http://localhost:8080/requestNet/graficas/inventario.jsp"></iframe>
                                     
                                     <div class="">
                                         <h3><a class="buttonLineRed" href="inventario.xhtml">Ver inventario</a></h3>
@@ -114,24 +111,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-md-6">
-                            <div class="panel panel-headline">
-                                <div class="panel-body">
-                                    <div class="titleModul">
-                                        <h2>Usuarios</h2>
-                                    </div>
-                                    
-                                    <iframe style="border:0" width="100%" height="440" src="http://localhost:8080/WebRequestNet/graficas/usuarios.jsp"></iframe>
-                                    
-                                    <div class="">
-                                        <h3><a class="buttonLineRed" href="usuarios.xhtml">Ver usuarios</a></h3>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
             </div>

@@ -12,8 +12,6 @@
             <h:form id="OrdenEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{ordenController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditOrdenLabel_idOrden}" for="idOrden" />
-                        <p:inputText id="idOrden" value="#{ordenController.selected.idOrden}" title="#{bundle.EditOrdenTitle_idOrden}" required="true" requiredMessage="#{bundle.EditOrdenRequiredMessage_idOrden}"/>
                         <p:outputLabel value="#{bundle.EditOrdenLabel_descripcion}" for="descripcion" />
                         <p:inputTextarea rows="4" cols="30" id="descripcion" value="#{ordenController.selected.descripcion}" title="#{bundle.EditOrdenTitle_descripcion}" required="true" requiredMessage="#{bundle.EditOrdenRequiredMessage_descripcion}"/>
                         <p:outputLabel value="#{bundle.EditOrdenLabel_adjuntarArchivo}" for="adjuntarArchivo" />

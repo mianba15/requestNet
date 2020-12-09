@@ -100,7 +100,7 @@ public class EstadoEq implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.EstadoEq[ idEstadoeq=" + idEstadoeq + " ]";
+        return this.getNomEstadoeq();
     }
     
 }

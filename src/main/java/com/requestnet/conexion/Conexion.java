@@ -18,6 +18,7 @@ public class Conexion {
     
     public Conexion(){
         driver = "com.mysql.jdbc.Driver";
+        //urlDB = "requestnet.cg5obor7xud4.us-east-2.rds.amazonaws.com:3306/requestnetweb";
         urlDB = "jdbc:mysql://localhost:8889/requestnetweb";
         loginUser = "root";
         password = "root";
@@ -78,13 +79,13 @@ public class Conexion {
 
             while (rs.next()) { 
                 System.out.println(rs.getInt("id_usuario")); 
-                System.out.println(rs.getString("tipo_documento"));
+                System.out.println(rs.getString("id_tipdoc"));
                 System.out.println(rs.getInt("num_documento"));
                 System.out.println(rs.getString("nombres"));
                 System.out.println(rs.getString("apellidos"));
-                System.out.println(rs.getString("ciudad"));
+                System.out.println(rs.getString("id_ciudad"));
                 System.out.println(rs.getString("cargo"));
-                System.out.println(rs.getString("estado"));
+                System.out.println(rs.getString("id_estadoru"));
             }
             
         }

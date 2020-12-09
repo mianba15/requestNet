@@ -14,22 +14,30 @@
                     <p:panelGrid columns="2" rendered="#{inventarioEquiposController.selected != null}">
                         <h:outputText value="#{bundle.ViewInventarioEquiposLabel_idEquipo}"/>
                         <h:outputText value="#{inventarioEquiposController.selected.idEquipo}" title="#{bundle.ViewInventarioEquiposTitle_idEquipo}"/>
+                        
                         <h:outputText value="#{bundle.ViewInventarioEquiposLabel_serial}"/>
                         <h:outputText value="#{inventarioEquiposController.selected.serial}" title="#{bundle.ViewInventarioEquiposTitle_serial}"/>
+                        
                         <h:outputText value="#{bundle.ViewInventarioEquiposLabel_idCliente}"/>
-                        <h:outputText value="#{inventarioEquiposController.selected.idCliente}" title="#{bundle.ViewInventarioEquiposTitle_idCliente}"/>
+                        <h:outputText value="#{inventarioEquiposController.selected.idCliente.idUsuario.nombres} #{inventarioEquiposController.selected.idCliente.idUsuario.apellidos}" title="#{bundle.ViewInventarioEquiposTitle_idCliente}"/>
+                        
                         <h:outputText value="#{bundle.ViewInventarioEquiposLabel_idTipoComponente}"/>
-                        <h:outputText value="#{inventarioEquiposController.selected.idTipoComponente}" title="#{bundle.ViewInventarioEquiposTitle_idTipoComponente}"/>
+                        <h:outputText value="#{inventarioEquiposController.selected.idTipoComponente.nomTipoComponente}" title="#{bundle.ViewInventarioEquiposTitle_idTipoComponente}"/>
+                        
                         <h:outputText value="#{bundle.ViewInventarioEquiposLabel_idMarca}"/>
-                        <h:outputText value="#{inventarioEquiposController.selected.idMarca}" title="#{bundle.ViewInventarioEquiposTitle_idMarca}"/>
+                        <h:outputText value="#{inventarioEquiposController.selected.idMarca.nomMarca}" title="#{bundle.ViewInventarioEquiposTitle_idMarca}"/>
+                        
                         <h:outputText value="#{bundle.ViewInventarioEquiposLabel_idTipoProcedencia}"/>
                         <h:outputText value="#{inventarioEquiposController.selected.idTipoProcedencia}" title="#{bundle.ViewInventarioEquiposTitle_idTipoProcedencia}"/>
+                        
                         <h:outputText value="#{bundle.ViewInventarioEquiposLabel_idJefe}"/>
-                        <h:outputText value="#{inventarioEquiposController.selected.idJefe}" title="#{bundle.ViewInventarioEquiposTitle_idJefe}"/>
+                        <h:outputText value="#{inventarioEquiposController.selected.idJefe.idUsuario.nombres} #{inventarioEquiposController.selected.idJefe.idUsuario.apellidos}" title="#{bundle.ViewInventarioEquiposTitle_idJefe}"/>
+                        
                         <h:outputText value="#{bundle.ViewInventarioEquiposLabel_idLider}"/>
-                        <h:outputText value="#{inventarioEquiposController.selected.idLider}" title="#{bundle.ViewInventarioEquiposTitle_idLider}"/>
+                        <h:outputText value="#{inventarioEquiposController.selected.idLider.idUsuario.nombres} #{inventarioEquiposController.selected.idLider.idUsuario.apellidos}" title="#{bundle.ViewInventarioEquiposTitle_idLider}"/>
+                        
                         <h:outputText value="#{bundle.ViewInventarioEquiposLabel_idEstadoeq}"/>
-                        <h:outputText value="#{inventarioEquiposController.selected.idEstadoeq}" title="#{bundle.ViewInventarioEquiposTitle_idEstadoeq}"/>
+                        <h:outputText value="#{inventarioEquiposController.selected.idEstadoeq.nomEstadoeq}" title="#{bundle.ViewInventarioEquiposTitle_idEstadoeq}"/>
                     </p:panelGrid>
                     <p:commandButton value="#{bundle.Close}" onclick="InventarioEquiposViewDialog.hide()"/>
                 </h:panelGroup>

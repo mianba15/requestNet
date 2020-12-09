@@ -15,7 +15,7 @@
                         <p:outputLabel value="#{bundle.CreateEstadoEqLabel_idEstadoeq}" for="idEstadoeq" />
                         <p:inputText id="idEstadoeq" value="#{estadoEqController.selected.idEstadoeq}" title="#{bundle.CreateEstadoEqTitle_idEstadoeq}" required="true" requiredMessage="#{bundle.CreateEstadoEqRequiredMessage_idEstadoeq}"/>
                         <p:outputLabel value="#{bundle.CreateEstadoEqLabel_nomEstadoeq}" for="nomEstadoeq" />
-                        <p:inputText id="nomEstadoeq" value="#{estadoEqController.selected.nomEstadoeq}" title="#{bundle.CreateEstadoEqTitle_nomEstadoeq}" />
+                        <p:inputText id="nomEstadoeq" value="#{estadoEqController.selected.nomEstadoeq}" title="#{bundle.CreateEstadoEqTitle_nomEstadoeq}" required="true" requiredMessage="#{bundle.MessageItemRequired}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{estadoEqController.create}" value="#{bundle.Save}" update="display,:EstadoEqListForm:datalist,:growl" oncomplete="handleSubmit(args,'EstadoEqCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="EstadoEqCreateDialog.hide()"/>

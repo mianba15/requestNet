@@ -121,7 +121,7 @@ public class Liderinventario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Liderinventario[ idLider=" + idLider + " ]";
+        return this.idUsuario.getNombres() + this.idUsuario.getApellidos();
     }
     
 }

@@ -113,7 +113,7 @@ public class Roles implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Roles[ idRol=" + idRol + " ]";
+        return this.getNombreRol();
     }
     
 }

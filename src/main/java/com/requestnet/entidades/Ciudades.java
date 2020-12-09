@@ -100,7 +100,8 @@ public class Ciudades implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Ciudades[ idCiudad=" + idCiudad + " ]";
+        return this.getNombreCiu();
     }
+   
     
 }

@@ -12,10 +12,8 @@
             <h:form id="CiudadesCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{ciudadesController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateCiudadesLabel_idCiudad}" for="idCiudad" />
-                        <p:inputText id="idCiudad" value="#{ciudadesController.selected.idCiudad}" title="#{bundle.CreateCiudadesTitle_idCiudad}" required="true" requiredMessage="#{bundle.CreateCiudadesRequiredMessage_idCiudad}"/>
                         <p:outputLabel value="#{bundle.CreateCiudadesLabel_nombreCiu}" for="nombreCiu" />
-                        <p:inputText id="nombreCiu" value="#{ciudadesController.selected.nombreCiu}" title="#{bundle.CreateCiudadesTitle_nombreCiu}" />
+                        <p:inputText id="nombreCiu" value="#{ciudadesController.selected.nombreCiu}" title="#{bundle.CreateCiudadesTitle_nombreCiu}" required="true" requiredMessage="#{bundle.MessageItemRequired}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{ciudadesController.create}" value="#{bundle.Save}" update="display,:CiudadesListForm:datalist,:growl" oncomplete="handleSubmit(args,'CiudadesCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="CiudadesCreateDialog.hide()"/>

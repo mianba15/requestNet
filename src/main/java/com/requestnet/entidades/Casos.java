@@ -217,7 +217,7 @@ public class Casos implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.Casos[ idCaso=" + idCaso + " ]";
+        return this.idTipoCaso.getNomTipoCaso();
     }
     
 }

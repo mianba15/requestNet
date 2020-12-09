@@ -42,10 +42,10 @@
                 <div id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../resources/img/userWomen4.jpg" class="img-circle" alt="Avatar"></img><span>Leidy Alfonso</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../resources/img/userWomen3.jpg" class="img-circle" alt="Avatar"></img><span>Leidy Alfonso</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="lnr lnr-user"></i> <span>Jefe Infraestructura</span></a></li>
-                                <li><a href="index.xhtml"><i class="active lnr lnr-envelope"></i> <span>Enviar correo</span></a></li>
+                                <li><a href="#"><i class="lnr lnr-user"></i> <span>Proveedor</span></a></li>
+                                <li><a href="emailProveedores.xhtml"><i class="active lnr lnr-envelope"></i> <span>Enviar correo</span></a></li>
                                 <!--<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>-->
                                 <li><a href="../"><i class="lnr lnr-exit"></i> <span>Salir</span></a></li>
                             </ul>
@@ -59,12 +59,7 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-                        <li><a href="../administrador/dashboard.xhtml" class=""><i class="lnr lnr-home"></i> <span>Escritorio</span></a></li>
-                        <li><a href="../administrador/inventario.xhtml" class=""><i class="lnr lnr-file-empty"></i> <span>Inventario</span></a></li>
-                        <li><a href="../administrador/novedades.xhtml" class=""><i class="lnr lnr lnr-layers"></i> <span>Novedades</span></a></li>
-                        <li><a href="../administrador/proveedores.xhtml" class=""><i class="lnr lnr-cog"></i> <span>Proveedores</span></a></li>
-                        <li><a href="../administrador/usuarios.xhtml" class=""><i class="lnr lnr-users"></i> <span>Usuarios</span></a></li>
-                        <li><a href="../administrador/procesos-almacenados.jsp" class=""><i class="lnr lnr-users"></i> <span>Procesos</span></a></li>
+                        <li><a href="../proveedor/index.xhtml" class="active"><i class="lnr lnr-cog"></i> <span>Proveedores</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -95,7 +90,7 @@
                                                 + "<br>"
                                                 + "<img src='../resources/img/mensajeRecibido.jpg' alt='Correo recibido' class='img-responsive image_mails'/>"
                                                 + "<br>"
-                                                + "<a class='buttonLineRed' href='index.xhtml'>Enviar un mensaje nuevo.</a>"
+                                                + "<a class='buttonLineRed' href='emailProveedores.xhtml'>Enviar un mensaje nuevo.</a>"
                                             );
                                         } else {
                                             out.print(
@@ -103,7 +98,7 @@
                                                 + "<br>"
                                                 + "<img src='../resources/img/mensajeNoRecibido.jpg' alt='Correo no recibido' class='img-responsive image_mails'/>"
                                                 + "<br>"
-                                                + "<a class='buttonLineRed' href='index.xhtml'>Intentar de nuevo.</a>"
+                                                + "<a class='buttonLineRed' href='emailProveedores.xhtml'>Intentar de nuevo.</a>"
                                             );
                                         }
                                     %>                            

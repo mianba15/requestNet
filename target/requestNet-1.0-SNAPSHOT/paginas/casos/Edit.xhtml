@@ -12,8 +12,6 @@
             <h:form id="CasosEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{casosController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditCasosLabel_idCaso}" for="idCaso" />
-                        <p:inputText id="idCaso" value="#{casosController.selected.idCaso}" title="#{bundle.EditCasosTitle_idCaso}" required="true" requiredMessage="#{bundle.EditCasosRequiredMessage_idCaso}"/>
                         <p:outputLabel value="#{bundle.EditCasosLabel_fechaCreacion}" for="fechaCreacion" />
                         <p:calendar id="fechaCreacion" pattern="MM/dd/yyyy" value="#{casosController.selected.fechaCreacion}" title="#{bundle.EditCasosTitle_fechaCreacion}" required="true" requiredMessage="#{bundle.EditCasosRequiredMessage_fechaCreacion}" showOn="button"/>
                         <p:outputLabel value="#{bundle.EditCasosLabel_descripcion}" for="descripcion" />

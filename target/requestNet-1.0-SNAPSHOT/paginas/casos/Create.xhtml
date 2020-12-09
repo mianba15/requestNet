@@ -12,50 +12,56 @@
             <h:form id="CasosCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{casosController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateCasosLabel_idCaso}" for="idCaso" />
-                        <p:inputText id="idCaso" value="#{casosController.selected.idCaso}" title="#{bundle.CreateCasosTitle_idCaso}" required="true" requiredMessage="#{bundle.CreateCasosRequiredMessage_idCaso}"/>
                         <p:outputLabel value="#{bundle.CreateCasosLabel_fechaCreacion}" for="fechaCreacion" />
                         <p:calendar id="fechaCreacion" pattern="MM/dd/yyyy" value="#{casosController.selected.fechaCreacion}" title="#{bundle.EditCasosTitle_fechaCreacion}" required="true" requiredMessage="#{bundle.EditCasosRequiredMessage_fechaCreacion}" showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateCasosLabel_descripcion}" for="descripcion" />
                         <p:inputTextarea rows="4" cols="30" id="descripcion" value="#{casosController.selected.descripcion}" title="#{bundle.CreateCasosTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateCasosRequiredMessage_descripcion}"/>
                         <p:outputLabel value="#{bundle.CreateCasosLabel_solucion}" for="solucion" />
-                        <p:inputTextarea rows="4" cols="30" id="solucion" value="#{casosController.selected.solucion}" title="#{bundle.CreateCasosTitle_solucion}" />
+                        <p:inputTextarea rows="4" cols="30" id="solucion" value="#{casosController.selected.solucion}" title="#{bundle.CreateCasosTitle_solucion}" required="true" requiredMessage="#{bundle.MessageItemRequired}" />
                         <p:outputLabel value="#{bundle.CreateCasosLabel_fechaSol}" for="fechaSol" />
-                        <p:calendar id="fechaSol" pattern="MM/dd/yyyy" value="#{casosController.selected.fechaSol}" title="#{bundle.EditCasosTitle_fechaSol}"  showOn="button"/>
+                        <p:calendar id="fechaSol" pattern="MM/dd/yyyy" value="#{casosController.selected.fechaSol}" title="#{bundle.EditCasosTitle_fechaSol}" required="true" requiredMessage="#{bundle.MessageItemRequired}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateCasosLabel_notas}" for="notas" />
-                        <p:inputTextarea rows="4" cols="30" id="notas" value="#{casosController.selected.notas}" title="#{bundle.CreateCasosTitle_notas}" />
+                        <p:inputTextarea rows="4" cols="30" id="notas" value="#{casosController.selected.notas}" title="#{bundle.CreateCasosTitle_notas}" required="true" requiredMessage="#{bundle.MessageItemRequired}" />
                         <p:outputLabel value="#{bundle.CreateCasosLabel_idTipoCaso}" for="idTipoCaso" />
-                        <p:selectOneMenu id="idTipoCaso" value="#{casosController.selected.idTipoCaso}" >
+                        
+                        <p:selectOneMenu id="idTipoCaso" value="#{casosController.selected.idTipoCaso}" required="true" requiredMessage="#{bundle.MessageItemRequired}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{tipoCasoController.itemsAvailableSelectOne}"
                                            var="idTipoCasoItem"
                                            itemValue="#{idTipoCasoItem}"/>
                         </p:selectOneMenu>
+                        
                         <p:outputLabel value="#{bundle.CreateCasosLabel_idTecnico}" for="idTecnico" />
-                        <p:selectOneMenu id="idTecnico" value="#{casosController.selected.idTecnico}" >
+                        <p:selectOneMenu id="idTecnico" value="#{casosController.selected.idTecnico}" required="true" requiredMessage="#{bundle.MessageItemRequired}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{tecnicoController.itemsAvailableSelectOne}"
                                            var="idTecnicoItem"
                                            itemValue="#{idTecnicoItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateCasosLabel_idJefe}" for="idJefe" />
-                        <p:selectOneMenu id="idJefe" value="#{casosController.selected.idJefe}" >
+                        <p:selectOneMenu id="idJefe" value="#{casosController.selected.idJefe}" required="true" requiredMessage="#{bundle.MessageItemRequired}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{jefeinfraestructuraController.itemsAvailableSelectOne}"
                                            var="idJefeItem"
                                            itemValue="#{idJefeItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateCasosLabel_idLider}" for="idLider" />
-                        <p:selectOneMenu id="idLider" value="#{casosController.selected.idLider}" >
+                        <p:selectOneMenu id="idLider" value="#{casosController.selected.idLider}" required="true" requiredMessage="#{bundle.MessageItemRequired}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{liderinventarioController.itemsAvailableSelectOne}"
                                            var="idLiderItem"
                                            itemValue="#{idLiderItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateCasosLabel_idEstado}" for="idEstado" />
-                        <p:selectOneMenu id="idEstado" value="#{casosController.selected.idEstado}" >
+                        <p:selectOneMenu id="idEstado" value="#{casosController.selected.idEstado}" required="true" requiredMessage="#{bundle.MessageItemRequired}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{estadosController.itemsAvailableSelectOne}"
                                            var="idEstadoItem"
                                            itemValue="#{idEstadoItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateCasosLabel_idCliente}" for="idCliente" />
                         <p:selectOneMenu id="idCliente" value="#{casosController.selected.idCliente}" required="true" requiredMessage="#{bundle.EditCasosRequiredMessage_idCliente}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{integranteColaboradorController.itemsAvailableSelectOne}"
                                            var="idClienteItem"
                                            itemValue="#{idClienteItem}"/>

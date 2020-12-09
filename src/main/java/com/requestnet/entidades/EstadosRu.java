@@ -111,7 +111,7 @@ public class EstadosRu implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.EstadosRu[ idEstadoru=" + idEstadoru + " ]";
+        return this.getNomEstadoru();
     }
     
 }

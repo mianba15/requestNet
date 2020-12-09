@@ -173,7 +173,7 @@ public class InventarioEquipos implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.InventarioEquipos[ idEquipo=" + idEquipo + " ]";
+        return  this.idEquipo.toString();
     }
     
 }

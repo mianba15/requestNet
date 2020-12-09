@@ -9,18 +9,18 @@
       xmlns:p="http://primefaces.org/ui">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Procesos Almacenados - requestNet</title>
+        <title>requestNet - Consultar datos</title>
         <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="icon" type="image/png" href="../resources/img/favicon.png">
-        <link rel="stylesheet" type="text/css" href="../resources/css/styles.css">
-        <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css">            
-        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/linearicons/style.css">
-        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/chartist/css/chartist-custom.css">
-        <link rel="stylesheet" type="text/css" href="../resources/assets/css/main.css">
-        <link rel="stylesheet" type="text/css" href="../resources/assets/css/demo.css">
+        <link rel="icon" type="image/png" href="../resources/img/favicon.png"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/css/styles.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css"></link>            
+        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/bootstrap/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/font-awesome/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/linearicons/style.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/vendor/chartist/css/chartist-custom.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/css/main.css"></link>
+        <link rel="stylesheet" type="text/css" href="../resources/assets/css/demo.css"></link>
     </head>
     <body>
         <div id="wrapper">
@@ -46,6 +46,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../resources/img/userWomen4.jpg" class="img-circle" alt="Avatar"><span>Leidy Alfonso</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#"><i class="lnr lnr-user"></i> <span>Jefe Infraestructura</span></a></li>
+                                <li><a href="../email/index.xhtml"><i class="lnr lnr-envelope"></i> <span>Enviar mensaje</span></a></li>
                                 <!--<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
                                 <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>-->
                                 <li><a href="../"><i class="lnr lnr-exit"></i> <span>Salir</span></a></li>
@@ -65,7 +66,7 @@
                         <li><a href="novedades.xhtml" class=""><i class="lnr lnr lnr-layers"></i> <span>Novedades</span></a></li>
                         <li><a href="proveedores.xhtml" class=""><i class="lnr lnr-cog"></i> <span>Proveedores</span></a></li>
                         <li><a href="usuarios.xhtml" class=""><i class="lnr lnr-users"></i> <span>Usuarios</span></a></li>
-                        <li><a href="procesos-almacenados.jsp" class="active"><i class="lnr lnr-users"></i> <span>Procesos</span></a></li>
+                        <li><a href="procesos-almacenados.jsp" class="active"><i class="lnr lnr-license"></i> <span>Cons. Datos</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -76,7 +77,7 @@
                 <div class="container-fluid">
                     <div class="panel panel-headline">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Procesos Almacenados</h3>
+                            <h3 class="panel-title">Consultar datos</h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -96,7 +97,7 @@
                                             </tr>
                                             <%           
                                             try {
-                                                Connection Conexion=DriverManager.getConnection("jdbc:mysql://localhost:8889/WebRequestNet", "WebRequestNet", "pass12345");  
+                                                Connection Conexion=DriverManager.getConnection("jdbc:mysql://localhost:8889/requestnetweb", "root", "root");  
                                                 CallableStatement procedimiento = Conexion.prepareCall("{call Usuariosinactivos}");    
 
                                                 final ResultSet rs = procedimiento.executeQuery();  
@@ -106,13 +107,13 @@
 
                                             <tr>
                                                 <td> <%=rs.getInt("id_usuario")%> </td>
-                                                <td> <%=rs.getString("tipo_documento")%> </td>
+                                                <td> <%=rs.getString("nombre_tipdoc")%> </td>
                                                 <td> <%=rs.getInt("num_documento")%> </td>
                                                 <td> <%=rs.getString("nombres")%> </td>
                                                 <td> <%=rs.getString("apellidos")%> </td>
-                                                <td> <%=rs.getString("ciudad")%> </td>
+                                                <td> <%=rs.getString("nombre_ciu")%> </td>
                                                 <td> <%=rs.getString("cargo")%> </td>
-                                                <td> <%=rs.getString("estado")%> </td>
+                                                <td> <%=rs.getString("nom_estadoru")%> </td>
                                             </tr>
 
                                             <%}    
@@ -140,14 +141,14 @@
                                             </tr>
                                             <%           
                                             try{  
-                                                Connection Conexion=DriverManager.getConnection("jdbc:mysql://localhost:8889/WebRequestNet", "WebRequestNet", "pass12345");  
+                                                Connection Conexion=DriverManager.getConnection("jdbc:mysql://localhost:8889/requestnetweb", "root", "root");  
                                                 CallableStatement procedimiento = Conexion.prepareCall("{call equiposAsignados}");    
                                                 final ResultSet rs = procedimiento.executeQuery();
                                                 while (rs.next()) {  
                                             %>
                                             <tr>
                                                 <td> <%=rs.getInt("id_equipo")%> </td>
-                                                <td> <%=rs.getString("estado_equipo")%> </td>
+                                                <td> <%=rs.getString("nom_estadoeq")%> </td>
                                                 <td> <%=rs.getString("nom_tipo_componente")%> </td>
                                                 <td> <%=rs.getString("nom_marca")%> </td>
                                                 <td> <%=rs.getInt("id_cliente")%> </td>

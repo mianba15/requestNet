@@ -11,7 +11,7 @@
             DefaultCategoryDataset data1 = new DefaultCategoryDataset();
             
             while(rs1.next()){
-                data1.setValue(rs1.getInt(2), rs1.getString("estado_equipo"), rs1.getString("estado_equipo")+"="+ rs1.getInt(2) );
+                data1.setValue(rs1.getInt(2), rs1.getString("nom_estadoeq"), rs1.getString("nom_estadoeq")+"="+ rs1.getInt(2) );
             }
             
             JFreeChart grafico1 = ChartFactory.createBarChart("Equipos", "", "Cantidad de equipos", data1, PlotOrientation.VERTICAL, true, true, true);

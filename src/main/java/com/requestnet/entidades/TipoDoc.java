@@ -100,7 +100,7 @@ public class TipoDoc implements Serializable {
 
     @Override
     public String toString() {
-        return "com.requestnet.entidades.TipoDoc[ idTipdoc=" + idTipdoc + " ]";
+        return this.getNombreTipdoc();
     }
     
 }
